@@ -1,23 +1,38 @@
-<%= form_for(@project) do |f| %>
-<%if @project.errors.any? %>
-<div id="error_explanation">
-  <h2>Get<%= @project.errors.count %>errors !</h2>
-
+<div class="container">
+  <form class="form-horizontal">
+  <%= form_for(@project) do |f| %>
+  <%if @project.errors.any? %>
+  <div id="error_explanation">
+    <h2>Get<%= @project.errors.count %>errors !</h2>
   <ul>
     <% @project.errors.full_messages.each do |msg| %>
-    <li><%= msg %></li>
+      <li><%= msg %></li>
     <% end %>
   </ul>
-</div>
-<% end %>
+  </div>
+  <% end %>
 
-<%= f.label :title %>
-<%= f.text_field :title, class:'form-control' %>
-<br>
-<%= f.label :content %>
-<%= f.text_field :content, class:'form-control' %>
-<br>
-<%= f.submit %>
-<br>
-<%= f.submit "back to tasks",name:'back' %>
-<% end %>
+  <div class="form-group">
+    <%= f.label :やること , class:'control-label col-sm-3'%>
+    <div class="col-sm-4">
+      <%= f.text_field :title, class:'form-control'%>
+    </div>
+  </div>
+  <br>
+  <div class="form-group">
+    <%= f.label :詳細 , class:'control-label col-sm-3'%>
+    <div class="col-sm-4">
+      <%= f.text_field :content, class:'form-control'%>
+    </div>
+
+  </div>
+  <br>
+
+
+  <%= f.submit "create new task",class:'btn btn-default btn-sm' %>
+</form>
+  <br>
+  <%= f.submit "back to tasks",name:'back',class:'btn btn-default btn-sm' %>
+  <% end %>
+
+</div>
