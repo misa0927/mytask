@@ -9,6 +9,7 @@ class ProjectsController < ApplicationController
   end
 
   def create
+    p ‘----create’
     @project = Project.new(projects_params)
     if @project.save
     redirect_to projects_path
@@ -21,7 +22,7 @@ end
   end
 
   def update
-    @project.update(projects_params)
+    @project.update(project_params)
     redirect_to projects_path
   end
 
@@ -32,7 +33,11 @@ end
 
   private
   def projects_params
-    params.require(:project).permit(:title,:content)
+    p '=-=-=-=-=-=-=-=-'
+    p params
+    p params.require(:project)
+    p params.require(:project).permit(:title,:content,:status)
+    params.require(:project).permit(:title,:content,:status)
   end
 
   def set_project
