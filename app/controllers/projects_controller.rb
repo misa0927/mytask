@@ -9,7 +9,6 @@ class ProjectsController < ApplicationController
   end
 
   def create
-    p ‘----create’
     @project = Project.new(projects_params)
     if @project.save
     redirect_to projects_path
@@ -33,10 +32,6 @@ end
 
   private
   def projects_params
-    p '=-=-=-=-=-=-=-=-'
-    p params
-    p params.require(:project)
-    p params.require(:project).permit(:title,:content,:status)
     params.require(:project).permit(:title,:content,:status)
   end
 
