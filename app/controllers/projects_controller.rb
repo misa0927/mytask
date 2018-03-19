@@ -32,7 +32,7 @@ end
 
   private
   def project_params
-    params.require(:project).permit(:title,:content,:status)
+    params.require(:project).permit(:title,:content,:status,:limit)
   end
 
   def set_project
