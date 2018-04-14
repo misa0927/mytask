@@ -19,7 +19,6 @@
         <%= f.text_field :title, class:'form-control'%>
       </div>
   </div>
-  <br>
   <div class="form-group">
     <%= f.label :詳細, class:'control-label col-sm-3'%>
       <div class="col-sm-7">
@@ -34,6 +33,7 @@
   </div>
   <br>
   <%= f.submit "create new task",class:'btn btn-default btn-sm' %>
+  <br>
   <% end %>
   <br>
   <%= link_to "back to tasks",projects_path,class:'btn btn-default btn-sm' %>

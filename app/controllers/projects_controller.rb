@@ -1,7 +1,10 @@
 class ProjectsController < ApplicationController
-  before_action :set_project, only:[:edit, :update, :destroy]
+  before_action :set_project, only:[:show,:edit, :update, :destroy, :toggle_status]
   def index
     @projects = Project.all
+  end
+
+  def show
   end
 
   def new
@@ -30,13 +33,18 @@ end
     redirect_to projects_path
   end
 
+  def toggle_status
+    @project.toggle_status!
+    redirect_to @project, notice: 'Project was successfully updated.'
+  end
+
   private
   def project_params
     params.require(:project).permit(:title,:content,:status,:limit)
   end
 
   def set_project
-    @project = Project.find(params[:id])
+    @project = Project.find(params[:id] || params[:project_id])
   end
 
 end
