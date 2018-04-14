@@ -1,16 +1,17 @@
 <div class="container">
+  <div class="headline">
   <h1>やること</h1>
-    <div>
-      <%= link_to "new task",new_project_path ,class:'btn btn-default btn-sm'%>
+</div>
+    <div class="add">
+      <%= link_to "Add new task",new_project_path ,class:'btn btn-default btn-sm'%>
     </div>
     <% @projects.each do |project| %>
       <div class="tasks">
-        <%= link_to project_path(project) do %>
         <li><%= project.title %></li>
-        <% end %>
         <li><%= project.content %></li>
         <li><%= project.status%></li>
         <li><%= project.limit %></li>
+        <%= link_to "show",project_path(project.id),class:'btn btn-default btn-sm' %>
         <%= link_to "edit",edit_project_path(project.id) ,class:'btn btn-default btn-sm'%>
         <%= link_to "delete",project_path(project.id),method: :delete,data:{confirm:'Delete this task?'} ,class:'btn btn-default btn-sm'%>
       <% end %>
