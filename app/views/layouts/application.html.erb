@@ -8,14 +8,18 @@
 </head>
 <body>
   <div id="wrap">
-    <header><p><%= link_to'mytask',root_path,class:"appname" %></p></header>
-      <%= yield %>
+    <header>
+      <p><%= link_to'mytask',root_path,class:"appname" %></p>
+    </header>
 
+      <%= yield %>
   </div>
-  <footer>
+
+<footer>
     <div class="container-fluid">
-    <p class="info">&copy; 2018 mytask</p>
-  </div>
-    </footer>
+      <p class="info">&copy; 2018 mytask</p>
+    </div>
+</footer>
+
 </body>
 </html>

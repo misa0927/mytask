@@ -7,15 +7,6 @@ html,body{
   font-family: 游ゴシック体, 'Yu Gothic', YuGothic, 'ヒラギノ角ゴシック Pro', 'Hiragino Kaku Gothic Pro', メイリオ, Meiryo, Osaka, 'ＭＳ Ｐゴシック', 'MS PGothic', sans-serif;
 }
 
-#wrap{
-  margin: 0 auto;
-  width: 100%;
-  position: relative;
-  min-height: 100%;
-  height: auto !important;
-  height: 100%;
-}
-
 header{
   background-color: #f44277;
   color: #e6e6e6;
@@ -31,7 +22,7 @@ header{
 
 a:hover{
   text-decoration: none;
-  color: #fff;
+  color: #e8eaed;
 }
 
 footer{
@@ -47,6 +38,15 @@ footer{
   color: #e6e6e6;
 }
 
+#wrap{
+  margin: 0 auto;
+  width: 100%;
+  min-height: 100%;
+  position: relative;
+  height: auto !important;
+  height: 100%;
+}
+
 h1{
   margin: 10px;
   color: #e6e6e6;
@@ -57,13 +57,6 @@ h1{
 }
 
 .tasks{
-  height: 100%;
-  margin-bottom: 10px;
-}
-
-.tasks li{
-  list-style: none;
-  display: inline-block;
-  margin-top: 10px;
-  padding: 10px;
+  height: auto;
+  margin: 30px;
 }

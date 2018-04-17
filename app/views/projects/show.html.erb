@@ -10,5 +10,7 @@
     <p class="left"><strong>期限</strong></p>
     <p class="left"><%= @project.limit %></p>
   </div>
-  <%= link_to '戻る', projects_path %>
+  <%= link_to projects_path,class:'btn btn-default btn-sm' do %>
+    <i class="fa fa-arrow-left"></i>back
+  <% end %>
 </div>

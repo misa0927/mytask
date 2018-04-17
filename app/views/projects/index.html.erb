@@ -1,19 +1,44 @@
-<div class="container">
-  <div class="headline">
+<div class="headline">
   <h1>やること</h1>
 </div>
     <div class="add">
-      <%= link_to "Add new task",new_project_path ,class:'btn btn-default btn-sm'%>
+      <%= link_to "Add new task +",new_project_path ,class:'btn btn-default btn-sm'%>
     </div>
+
     <% @projects.each do |project| %>
       <div class="tasks">
-        <li><%= project.title %></li>
-        <li><%= project.content %></li>
-        <li><%= project.status%></li>
-        <li><%= project.limit %></li>
-        <%= link_to "show",project_path(project.id),class:'btn btn-default btn-sm' %>
-        <%= link_to "edit",edit_project_path(project.id) ,class:'btn btn-default btn-sm'%>
-        <%= link_to "delete",project_path(project.id),method: :delete,data:{confirm:'Delete this task?'} ,class:'btn btn-default btn-sm'%>
-      <% end %>
-    </div>
-</div>
+        <table class="table">
+          <thead>
+          <tr>
+            <th>やること</th>
+            <th>詳細</th>
+            <th>状態</th>
+            <th>期限</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr>
+            <td><%= project.title %></td>
+            <td><%= project.content %></td>
+            <td><%= project.status%></td>
+            <td><%= project.limit %></td>
+            <td>
+              <%= link_to project_path(project.id),class:'btn btn-default btn-sm' do %>
+              <i class="fa fa-star-o"></i>show
+              <% end %>
+            </td>
+            <td>
+              <%= link_to edit_project_path(project.id) ,class:'btn btn-default btn-sm' do%>
+              <i class="fa fa-pencil-square-o"></i>edit
+              <% end %>
+            </td>
+            <td>
+              <%= link_to project_path(project.id),method: :delete,data:{confirm:'Delete this task?'} ,class:'btn btn-default btn-sm' do%>
+              <i class="fa fa-trash"></i>delete
+              <% end %>
+            </td>
+          </tr>
+        </tbody>
+        </table>
+      </div>
+    <% end %>

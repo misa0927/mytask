@@ -14,21 +14,21 @@
     </div>
   </div>
   <div class="form-group">
-    <%= f.label :やること, class:'control-label col-sm-3'%>
+    <%= f.label :title,'やること', class:'control-label col-sm-3'%>
       <div class="col-sm-7">
         <%= f.text_field :title, class:'form-control'%>
       </div>
   </div>
   <div class="form-group">
-    <%= f.label :詳細, class:'control-label col-sm-3'%>
+    <%= f.label :content,'詳細', class:'control-label col-sm-3'%>
       <div class="col-sm-7">
         <%= f.text_field :content, class:'form-control'%>
       </div>
   </div>
   <div class="form-group">
-    <%= f.label :期限, class:'control-label col-sm-3'%>
+    <%= f.label :limit,'期限', class:'control-label col-sm-3'%>
     <div class="col-sm-7">
-      <%= f.date_field :limit, class:'form-control'%>
+      <%= f.datetime_select :limit, class:'form-control'%>
     </div>
   </div>
   <br>
@@ -36,4 +36,6 @@
   <br>
   <% end %>
   <br>
-  <%= link_to "back to tasks",projects_path,class:'btn btn-default btn-sm' %>
+  <%= link_to projects_path,class:'btn btn-default btn-sm' do%>
+    <i class="fa fa-arrow-left"></i>back to tasks
+  <% end %>
